@@ -9,12 +9,12 @@ const calendar = document.querySelector(".calendar"),
   eventDay = document.querySelector(".event-day"),
   eventDate = document.querySelector(".event-date"),
   eventsContainer = document.querySelector(".events"),
-  addEventBtn = document.querySelector(".add-event"),
-  addEventWrapper = document.querySelector(".add-event-wrapper "),
-  addEventCloseBtn = document.querySelector(".close "),
-  addEventTitle = document.querySelector(".event-name "),
-  addEventFrom = document.querySelector(".event-time-from "),
-  addEventTo = document.querySelector(".event-time-to "),
+  //addEventBtn = document.querySelector(".add-event"),
+  //addEventWrapper = document.querySelector(".add-event-wrapper "),
+  //addEventCloseBtn = document.querySelector(".close "),
+  //addEventTitle = document.querySelector(".event-name "),
+  //addEventFrom = document.querySelector(".event-time-from "),
+  //addEventTo = document.querySelector(".event-time-to "),
   addEventSubmit = document.querySelector(".add-event-btn ");
 
 let today = new Date();
@@ -23,19 +23,20 @@ let month = today.getMonth();
 let year = today.getFullYear();
 
 const months = [
-  "January",
-  "February",
-  "March",
+  "Januari",
+  "Februari",
+  "Maret",
   "April",
-  "May",
-  "June",
-  "July",
-  "August",
+  "Mei",
+  "Juni",
+  "Juli",
+  "Agustus",
   "September",
-  "October",
+  "Oktober",
   "November",
-  "December",
+  "Desember",
 ];
+
 
 // const eventsArr = [
 //   {
@@ -226,16 +227,29 @@ function gotoDate() {
       return;
     }
   }
-  alert("Invalid Date");
+  alert("Tanggal Tidak Valid");
 }
 
 //function get active day day name and date and update eventday eventdate
 function getActiveDay(date) {
   const day = new Date(year, month, date);
   const dayName = day.toString().split(" ")[0];
-  eventDay.innerHTML = dayName;
+
+  // Mengganti nama hari dalam bahasa Indonesia
+  const daysInIndonesian = {
+    Sun: "Minggu",
+    Mon: "Senin",
+    Tue: "Selasa",
+    Wed: "Rabu",
+    Thu: "Kamis",
+    Fri: "Jum'at",
+    Sat: "Sabtu"
+  };
+
+  eventDay.innerHTML = daysInIndonesian[dayName];
   eventDate.innerHTML = date + " " + months[month] + " " + year;
 }
+
 
 //function update events when a day is active
 function updateEvents(date) {
@@ -261,7 +275,7 @@ function updateEvents(date) {
   });
   if (events === "") {
     events = `<div class="no-event">
-            <h3>No Events</h3>
+            <h3>Tidak Ada Peserta</h3>
         </div>`;
   }
   eventsContainer.innerHTML = events;
@@ -269,7 +283,7 @@ function updateEvents(date) {
 }
 
 //function to add event
-addEventBtn.addEventListener("click", () => {
+/*addEventBtn.addEventListener("click", () => {
   addEventWrapper.classList.toggle("active");
 });
 
@@ -281,12 +295,12 @@ document.addEventListener("click", (e) => {
   if (e.target !== addEventBtn && !addEventWrapper.contains(e.target)) {
     addEventWrapper.classList.remove("active");
   }
-});
+});*/
 
 //allow 50 chars in eventtitle
-addEventTitle.addEventListener("input", (e) => {
+/*addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
-});
+});*/
 
 function defineProperty() {
   var osccred = document.createElement("div");
