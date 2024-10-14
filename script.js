@@ -119,9 +119,20 @@ initCalendar();
 
 function addListner() {
   const days = document.querySelectorAll(".day");
+
   days.forEach((day) => {
     day.addEventListener("click", (e) => {
-      let dayClicked = Number(e.target.innerHTML);  // Simpan tanggal yang diklik
+      let dayClicked = Number(e.target.innerHTML); // Simpan tanggal yang diklik
+
+      // Hapus kelas aktif dari semua elemen di kalender
+      days.forEach((d) => {
+        d.classList.remove("active");
+      });
+
+      // Tambahkan kelas aktif pada tanggal yang diklik
+      e.target.classList.add("active");
+
+      // Handle jika klik pada tanggal di bulan sebelumnya
       if (e.target.classList.contains("prev-date")) {
         prevMonth();
         setTimeout(() => {
@@ -137,7 +148,9 @@ function addListner() {
             }
           });
         }, 100);
-      } else if (e.target.classList.contains("next-date")) {
+      }
+      // Handle jika klik pada tanggal di bulan berikutnya
+      else if (e.target.classList.contains("next-date")) {
         nextMonth();
         setTimeout(() => {
           const days = document.querySelectorAll(".day");
@@ -152,16 +165,17 @@ function addListner() {
             }
           });
         }, 100);
-      } else {
-        e.target.classList.add("active");
+      }
+      // Handle klik pada tanggal biasa di bulan yang sama
+      else {
         getActiveDay(dayClicked);
-        updatePKLData(new Date(year, month, dayClicked)); // Update data PKL saat klik tanggal biasa
+        updatePKLData(new Date(year, month, dayClicked));
       }
     });
   });
 }
 
-  
+
   todayBtn.addEventListener("click", () => {
     today = new Date();
     month = today.getMonth();
