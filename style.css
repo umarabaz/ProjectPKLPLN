@@ -1,6 +1,7 @@
 :root {
   --primary-clr: #00aff0;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -555,4 +556,79 @@ body {
 }
 .credits a:hover {
   text-decoration: underline;
+}
+
+/*
+tambahan*/
+
+.pkl-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #373c4f;
+}
+
+.pkl-participants {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.participant {
+  margin-bottom: 5px;
+}
+
+/*project tabel excel*/
+.unique-body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    /*background-color: #ffffff*/; /* Light background for contrast */
+}
+
+table{
+    width: 100%;
+    max-width: 800px; /* Limits the table width for better readability */
+    margin: 1rem auto;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid #00aff0;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+
+th {
+    background-color: #00aff0;
+    color: white;
+}
+
+input[type="date"] {
+    margin: 1rem auto;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+
+
+/* Styling untuk pesan "Tidak Ada Peserta PKL" agar sesuai dengan container */
+#messageContainer {
+    text-align: center; /* Posisikan teks di tengah */
+    margin: 20px auto; /* Tambahkan margin di atas dan bawah, sejajarkan di tengah */
+    font-size: 1.2em; /* Ubah ukuran font agar lebih jelas */
+    color: #555; /* Warna teks agar terlihat lebih soft */
+    font-weight: bold; /* Teks lebih tebal untuk penekanan */
+    max-width: 100%; /* Pastikan pesan tidak melebihi lebar container */
 }

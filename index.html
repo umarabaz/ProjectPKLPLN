@@ -19,6 +19,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Kalender PKL</title>
   </head>
@@ -50,10 +51,16 @@
           </div>
         </div>
       </div>
+
+
       <div class="right">
         <div class="today-date">
           <div class="event-day">wed</div>
           <div class="event-date">12th december 2022</div>
+        </div>
+        <div class="unique-body">
+            <div id="messageContainer"></div>
+            <table id="tableData" class="unique-table"></table>
         </div>
         <div class="events"></div>
         <div class="add-event-wrapper">
