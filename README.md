@@ -1,4 +1,5 @@
-"WEB Kalender PLN"
+"Project Bot Kalender PKL PLN"
 
-deploy, 
+deploy webnya
+dapatkan https nya
 edit sebagai MiniApp di BotFather 
