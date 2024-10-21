@@ -2,7 +2,7 @@
 
 Proyek ini merupakan bot Telegram yang dirancang untuk membantu melacak jadwal peserta PKL (Praktik Kerja Lapangan). Bot ini terintegrasi dengan sistem kalender berbasis web dan menyediakan miniapp melalui Telegram.
 
-##Fitur
+## Fitur
 - Menampilkan jadwal peserta PKL berdasarkan tanggal yang dipilih.
 - Kalender interaktif dengan informasi peserta yang terperinci.
 - Terintegrasi dengan Telegram BotFather sebagai aplikasi mini.
